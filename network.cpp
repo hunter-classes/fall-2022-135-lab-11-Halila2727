@@ -83,4 +83,17 @@ void Network::printDot()
         std::cout << "\"@" << profiles[i].getUsername() << "\"\n";
     }
     std::cout << "\n\n";
+
+    for (int i = 0; i < numUsers; i++)
+    {
+        for (int j = 0; j < numUsers; j++)
+        {
+            if (following[i][j] == true)
+            {
+                std::cout << "\"@" << profiles[i].getUsername() << "\" -> \"@" << 
+                profiles[j].getUsername() << "\"\n";
+            }
+        }
+    }
+    std::cout << "}\n";
 }
